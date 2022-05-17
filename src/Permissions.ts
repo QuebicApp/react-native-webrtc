@@ -62,7 +62,7 @@ class Permissions {
         if (typeof permissionDesc.name === 'undefined') {
             throw new TypeError("Missing required 'name' member of PermissionDescriptor.");
         }
-        if (this.VALID_PERMISSIONS.indexOf(permissionDesc.name) === -1) {
+        if (!this.VALID_PERMISSIONS.includes(permissionDesc.name)) {
             throw new TypeError(
                 "'name' member of PermissionDescriptor is not a valid value for enumeration PermissionName."
             );
