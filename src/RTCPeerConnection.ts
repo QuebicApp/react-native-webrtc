@@ -30,14 +30,14 @@ type RTCPeerConnectionState = 'new' | 'connecting' | 'connected' | 'disconnected
 
 type RTCIceConnectionState = 'new' | 'checking' | 'connected' | 'completed' | 'failed' | 'disconnected' | 'closed';
 
-type RTCDataChannelInit = {
+interface RTCDataChannelInit {
     ordered?: boolean,
     maxPacketLifeTime?: number,
     maxRetransmits?: number,
     protocol?: string,
     negotiated?: boolean,
     id?: number
-};
+}
 
 const PEER_CONNECTION_EVENTS = [
     'connectionstatechange',

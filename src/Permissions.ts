@@ -6,9 +6,9 @@ const { WebRTCModule } = NativeModules;
 /**
  * Type declaration for a permissions descriptor.
  */
-type PermissionDescriptor = {
+interface PermissionDescriptor {
     name: string;
-};
+}
 
 /**
  * Class implementing a subset of W3C's Permissions API as defined by:
