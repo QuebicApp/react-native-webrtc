@@ -36,6 +36,7 @@
     "url": "https://github.com/react-native-webrtc/react-native-webrtc/issues"
   },
   "devDependencies": {
+    "@react-native-community/eslint-config": "^3.0.2",
     "@types/react": "17.0.40",
     "@types/react-native": "0.67.3",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
