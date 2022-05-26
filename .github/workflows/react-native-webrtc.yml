@@ -43,4 +43,5 @@ jobs:
 
       - name: Lint source
         run: |
+          npm run check
           npm run lint
