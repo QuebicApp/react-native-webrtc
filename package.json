@@ -28,7 +28,7 @@
     "react-native": ">=0.60.0"
   },
   "scripts": {
-    "check": "tsc --noEmit",
+    "lint": "tsc --noEmit",
     "postinstall": "node tools/downloadWebRTC.js",
     "prepare": "husky install && bob build"
   },
