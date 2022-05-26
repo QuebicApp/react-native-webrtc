@@ -1,11 +1,10 @@
 
-import { NativeModules } from 'react-native';
 import { defineCustomEventTarget } from 'event-target-shim';
 
 import getDisplayMedia from './getDisplayMedia';
 import getUserMedia from './getUserMedia';
 
-const { WebRTCModule } = NativeModules;
+import WebRTCModule from './native/WebRTCModule';
 
 const MEDIA_DEVICES_EVENTS = ['devicechange'];
 

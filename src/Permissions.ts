@@ -1,7 +1,7 @@
 
-import { NativeModules, Permission, PermissionsAndroid, Platform } from 'react-native';
+import { Permission, PermissionsAndroid, Platform } from 'react-native';
 
-const { WebRTCModule } = NativeModules;
+import WebRTCModule from './native/WebRTCModule';
 
 /**
  * Type declaration for a permissions descriptor.
