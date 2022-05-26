@@ -3,11 +3,17 @@ import { NativeModules } from 'react-native';
 import { defineCustomEventTarget } from 'event-target-shim';
 import { uniqueID } from './RTCUtil';
 
-import MediaStreamTrack from './MediaStreamTrack';
+import MediaStreamTrack, { MediaStreamTrackInfo } from './MediaStreamTrack';
 
 const { WebRTCModule } = NativeModules;
 
 const MEDIA_STREAM_EVENTS = ['active', 'inactive', 'addtrack', 'removetrack'];
+
+interface MediaStreamInfo {
+    streamId: string;
+    streamReactTag: string;
+    tracks: MediaStreamTrackInfo[];
+}
 
 export default class MediaStream extends defineCustomEventTarget(...MEDIA_STREAM_EVENTS) {
     id: string;
@@ -36,7 +42,11 @@ export default class MediaStream extends defineCustomEventTarget(...MEDIA_STREAM
      *   done internally, when the stream is first created in native and the JS wrapper is
      *   built afterwards.
      */
-    constructor(arg) {
+    constructor()
+    constructor(stream: MediaStream)
+    constructor(tracks: MediaStreamTrack[])
+    constructor(info: MediaStreamInfo)
+    constructor(arg?: MediaStream | MediaStreamTrack[] | MediaStreamInfo) {
         super();
 
         // Assigm a UUID to start with. It may get overridden for remote streams.
@@ -94,7 +104,7 @@ export default class MediaStream extends defineCustomEventTarget(...MEDIA_STREAM
         return this._tracks.slice();
     }
 
-    getTrackById(trackId): MediaStreamTrack | undefined {
+    getTrackById(trackId: string): MediaStreamTrack | undefined {
         return this._tracks.find(track => track.id === trackId);
     }
 

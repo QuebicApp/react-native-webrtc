@@ -10,7 +10,7 @@ const MEDIA_STREAM_TRACK_EVENTS = ['ended', 'mute', 'unmute'];
 
 type MediaStreamTrackState = 'live' | 'ended';
 
-interface MediaStreamTrackInfo {
+export interface MediaStreamTrackInfo {
     constraints?: Record<string, unknown>;
     enabled: boolean;
     settings?: Record<string, unknown>;
