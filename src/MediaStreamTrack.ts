@@ -10,6 +10,19 @@ const MEDIA_STREAM_TRACK_EVENTS = ['ended', 'mute', 'unmute'];
 
 type MediaStreamTrackState = 'live' | 'ended';
 
+interface MediaStreamTrackInfo {
+    constraints?: Record<string, unknown>;
+    enabled: boolean;
+    settings?: Record<string, unknown>;
+
+    id: string;
+    kind: string;
+    label: string;
+    remote: boolean;
+
+    readyState: MediaStreamTrackState;
+}
+
 class MediaStreamTrack extends defineCustomEventTarget(...MEDIA_STREAM_TRACK_EVENTS) {
     _constraints: object;
     _enabled: boolean;
@@ -22,7 +35,7 @@ class MediaStreamTrack extends defineCustomEventTarget(...MEDIA_STREAM_TRACK_EVE
     readyState: MediaStreamTrackState;
     remote: boolean;
 
-    constructor(info) {
+    constructor(info: MediaStreamTrackInfo) {
         super();
 
         this._constraints = info.constraints || {};
