@@ -1,6 +1,5 @@
 
 import { defineCustomEventTarget } from 'event-target-shim';
-import { NativeModules } from 'react-native';
 
 import MediaStream from './MediaStream';
 import MediaStreamEvent from './MediaStreamEvent';
@@ -14,7 +13,7 @@ import RTCEvent from './RTCEvent';
 import * as RTCUtil from './RTCUtil';
 import EventEmitter from './EventEmitter';
 
-const { WebRTCModule } = NativeModules;
+import WebRTCModule from './native/WebRTCModule';
 
 type RTCSignalingState =
     | 'stable'

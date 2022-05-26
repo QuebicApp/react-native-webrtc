@@ -1,12 +1,11 @@
 
-import { NativeModules } from 'react-native';
 import * as base64 from 'base64-js';
 import { defineCustomEventTarget } from 'event-target-shim';
 import MessageEvent from './MessageEvent';
 import RTCDataChannelEvent from './RTCDataChannelEvent';
 import EventEmitter from './EventEmitter';
 
-const { WebRTCModule } = NativeModules;
+import WebRTCModule from './native/WebRTCModule';
 
 type RTCDataChannelState = 'connecting' | 'open' | 'closing' | 'closed';
 

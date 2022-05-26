@@ -1,10 +1,9 @@
 
-import { NativeModules } from 'react-native';
 import { defineCustomEventTarget } from 'event-target-shim';
 
 import { deepClone } from './RTCUtil';
 
-const { WebRTCModule } = NativeModules;
+import WebRTCModule from './native/WebRTCModule';
 
 const MEDIA_STREAM_TRACK_EVENTS = ['ended', 'mute', 'unmute'];
 

@@ -1,6 +1,6 @@
-import { NativeModules, NativeEventEmitter } from 'react-native';
+import { NativeEventEmitter } from 'react-native';
 
-const { WebRTCModule } = NativeModules;
+import WebRTCModule from './native/WebRTCModule';
 
 const EventEmitter = new NativeEventEmitter(WebRTCModule);
 

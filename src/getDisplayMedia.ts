@@ -1,10 +1,8 @@
 
-import { NativeModules } from 'react-native';
-
 import MediaStream from './MediaStream';
 import MediaStreamError from './MediaStreamError';
 
-const { WebRTCModule } = NativeModules;
+import WebRTCModule from './native/WebRTCModule';
 
 export default function getDisplayMedia(): Promise<MediaStream> {
     return new Promise((resolve, reject) => {

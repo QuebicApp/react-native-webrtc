@@ -1,11 +1,10 @@
 
-import { NativeModules } from 'react-native';
 import { defineCustomEventTarget } from 'event-target-shim';
 import { uniqueID } from './RTCUtil';
 
 import MediaStreamTrack from './MediaStreamTrack';
 
-const { WebRTCModule } = NativeModules;
+import WebRTCModule from './native/WebRTCModule';
 
 const MEDIA_STREAM_EVENTS = ['active', 'inactive', 'addtrack', 'removetrack'];
 
