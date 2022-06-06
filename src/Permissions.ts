@@ -1,13 +1,13 @@
 
 import { Permission, PermissionsAndroid, Platform } from 'react-native';
 
-import WebRTCModule from './native/WebRTCModule';
+import WebRTCModule, { type PermissionType } from './native/WebRTCModule';
 
 /**
  * Type declaration for a permissions descriptor.
  */
 type PermissionDescriptor = {
-    name: string;
+    name: PermissionType;
 };
 
 /**

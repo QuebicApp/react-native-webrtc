@@ -5,12 +5,7 @@ import MediaStream from './MediaStream';
 import MediaStreamError from './MediaStreamError';
 import permissions from './Permissions';
 
-import WebRTCModule from './native/WebRTCModule';
-
-interface Constraints {
-    audio?: boolean | object;
-    video?: boolean | object;
-}
+import WebRTCModule, { type Constraints } from './native/WebRTCModule';
 
 export default function getUserMedia(constraints: Constraints = {}): Promise<MediaStream> {
     // According to
