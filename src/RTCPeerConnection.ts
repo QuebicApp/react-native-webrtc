@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/ban-ts-comment: "warn" */
 
 import { defineCustomEventTarget } from 'event-target-shim';
 

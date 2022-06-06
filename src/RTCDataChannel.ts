@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/ban-ts-comment: "warn" */
 
 import * as base64 from 'base64-js';
 import { defineCustomEventTarget } from 'event-target-shim';
