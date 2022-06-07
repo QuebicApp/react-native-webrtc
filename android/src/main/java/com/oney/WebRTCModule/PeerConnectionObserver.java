@@ -345,7 +345,7 @@ class PeerConnectionObserver implements PeerConnection.Observer {
             trackInfo.putString("label", "Video");
             trackInfo.putString("kind", track.kind());
             trackInfo.putBoolean("enabled", track.enabled());
-            trackInfo.putString("readyState", track.state().toString());
+            trackInfo.putString("readyState", track.state().toString().toLowerCase());
             trackInfo.putBoolean("remote", true);
             tracks.pushMap(trackInfo);
 
@@ -362,7 +362,7 @@ class PeerConnectionObserver implements PeerConnection.Observer {
             trackInfo.putString("label", "Audio");
             trackInfo.putString("kind", track.kind());
             trackInfo.putBoolean("enabled", track.enabled());
-            trackInfo.putString("readyState", track.state().toString());
+            trackInfo.putString("readyState", track.state().toString().toLowerCase());
             trackInfo.putBoolean("remote", true);
             tracks.pushMap(trackInfo);
         }

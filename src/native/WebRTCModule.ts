@@ -73,13 +73,7 @@ export interface TrackInfo {
     id: string;
     kind: "audio" | "video"
     label: string;
-
-    /**
-     * Lowercase on Android
-     * Title case on iOS
-     * Note: Sometimes this is all uppercase on android (via getDisplayMedia)
-     */
-    readyState: "live" | "ended" | "Live" | "Ended";
+    readyState: "live" | "ended";
     remote: boolean;
 
     /**
